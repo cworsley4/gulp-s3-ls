@@ -1,7 +1,4 @@
-# gulp-s3-ls
-Gulp S3 upload with less suck
-
-# gulp-s3
+# gulp-s3 [![NPM version][npm-image]][npm-url]
 
 > s3 plugin for [gulp](https://github.com/wearefractal/gulp)
 
@@ -18,7 +15,8 @@ Setup your aws.json file
 {
   "key": "AKIAI3Z7CUAFHG53DMJA",
   "secret": "acYxWRu5RRa6CwzQuhdXEfTpbQA+1XQJ7Z1bGTCx",
-  "bucket": "dev.example.com"
+  "bucket": "dev.example.com",
+  "region": "eu-west-1"
 }
 ```
 
@@ -26,16 +24,9 @@ Then, use it in your `gulpfile.js`:
 ```javascript
 var s3 = require("gulp-s3");
 
-aws = require('./aws.json');
+aws = JSON.parse(fs.readFileSync('./aws.json'));
 gulp.src('./dist/**')
     .pipe(s3(aws));
-```
-
-## Testing
-To test your paths before uploading add the 'dry' flag to your gulp command.
-
-```
-gulp deploy --dry
 ```
 
 ## API
@@ -68,8 +59,9 @@ var gzip = require("gulp-gzip");
 var options = { gzippedOnly: true };
 
 gulp.src('./dist/**')
-  .pipe(gzip())
-  .pipe(s3(aws, options));
+.pipe(gzip())
+.pipe(s3(aws, options));
+
 });
 ```
 

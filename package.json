@@ -1,18 +1,18 @@
 {
-  "name": "gulp-s3",
-  "version": "0.3.0",
+  "name": "gulp-s3-ls",
+  "version": "1.0.0",
   "description": "A plugin for Gulp that uploads files to s3",
   "keywords": [
     "gulpplugin",
     "gulp",
     "s3"
   ],
-  "homepage": "https://github.com/nkostelnik/gulp-s3",
-  "bugs": "https://github.com/nkostelnik/gulp-s3/issues",
+  "homepage": "https://github.com/cworsley4/gulp-s3-ls",
+  "bugs": "https://github.com/cworsley4/gulp-s3-ls/issues",
   "author": {
-    "name": "Nicholas Kostelnik",
+    "name": "Cecil Worsley",
     "email": "",
-    "url": "https://github.com/nkostelnik"
+    "url": "https://github.com/cworsley4"
   },
   "main": "./index.js",
   "repository": {

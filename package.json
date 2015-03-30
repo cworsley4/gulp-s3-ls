@@ -1,7 +1,7 @@
 {
   "name": "gulp-s3-ls",
   "version": "1.0.0",
-  "description": "A plugin for Gulp that uploads files to s3",
+  "description": "A plugin for Gulp that uploads files to s3 w/ less suck",
   "keywords": [
     "gulpplugin",
     "gulp",
@@ -17,7 +17,7 @@
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nkostelnik/gulp-s3.git"
+    "url": "git://github.com/cworsley4/gulp-s3-ls.git"
   },
   "scripts": {
     "test": "mocha"

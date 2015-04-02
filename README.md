@@ -22,9 +22,10 @@ Setup your aws.json file
 
 Then, use it in your `gulpfile.js`:
 ```javascript
+var gulp = require("gulp");
 var s3 = require("gulp-s3");
+var aws = require("./aws.json");
 
-aws = JSON.parse(fs.readFileSync('./aws.json'));
 gulp.src('./dist/**')
     .pipe(s3(aws));
 ```
@@ -40,7 +41,11 @@ Default: `[]`
 Headers to set to each file uploaded to S3
 
 ```javascript
-var options = { headers: {'Cache-Control': 'max-age=315360000, no-transform, public'} }
+var gulp = require("gulp");
+var s3 = require("gulp-s3");
+var aws = require("./aws.json");
+var options = { headers: {'Cache-Control': 'max-age=315360000, no-transform, public'} };
+
 gulp.src('./dist/**', {read: false})
     .pipe(s3(aws, options));
 ```
@@ -55,14 +60,13 @@ Only upload files with .gz extension, additionally it will remove the .gz suffix
 ```javascript
 var gulp = require("gulp");
 var s3 = require("gulp-s3");
+var aws = require("./aws.json");
 var gzip = require("gulp-gzip");
 var options = { gzippedOnly: true };
 
 gulp.src('./dist/**')
 .pipe(gzip())
 .pipe(s3(aws, options));
-
-});
 ```
 
 ## License

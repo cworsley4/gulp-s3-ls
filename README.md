@@ -29,8 +29,18 @@ gulp.src('./dist/**')
     .pipe(s3(aws));
 ```
 
-## API
+## Flags
 
+#### --dry
+
+To test uploading files to s3 add the --dry flag and gulp-s3-ls will print out
+the files and the corresponding upload path.
+
+```
+gulp upload --dry
+```
+
+## API
 
 #### options.headers
 

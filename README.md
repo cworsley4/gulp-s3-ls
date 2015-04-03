@@ -1,13 +1,13 @@
-# gulp-s3 [![NPM version][npm-image]][npm-url]
+# gulp-s3-ls [![NPM version][npm-image]][npm-url]
 
 > s3 plugin for [gulp](https://github.com/wearefractal/gulp)
 
 ## Usage
 
-First, install `gulp-s3` as a development dependency:
+First, install `gulp-s3-ls` as a development dependency:
 
 ```shell
-npm install --save-dev gulp-s3
+npm install --save-dev gulp-s3-ls
 ```
 
 Setup your aws.json file
@@ -15,15 +15,14 @@ Setup your aws.json file
 {
   "key": "AKIAI3Z7CUAFHG53DMJA",
   "secret": "acYxWRu5RRa6CwzQuhdXEfTpbQA+1XQJ7Z1bGTCx",
-  "bucket": "dev.example.com",
-  "region": "eu-west-1"
+  "bucket": "dev.example.com"
 }
 ```
 
 Then, use it in your `gulpfile.js`:
 ```javascript
 var gulp = require("gulp");
-var s3 = require("gulp-s3");
+var s3 = require("gulp-s3-ls");
 var aws = require("./aws.json");
 
 gulp.src('./dist/**')
@@ -42,7 +41,7 @@ Headers to set to each file uploaded to S3
 
 ```javascript
 var gulp = require("gulp");
-var s3 = require("gulp-s3");
+var s3 = require("gulp-s3-ls");
 var aws = require("./aws.json");
 var options = { headers: {'Cache-Control': 'max-age=315360000, no-transform, public'} };
 
@@ -59,7 +58,7 @@ Only upload files with .gz extension, additionally it will remove the .gz suffix
 
 ```javascript
 var gulp = require("gulp");
-var s3 = require("gulp-s3");
+var s3 = require("gulp-s3-ls");
 var aws = require("./aws.json");
 var gzip = require("gulp-gzip");
 var options = { gzippedOnly: true };
@@ -73,5 +72,5 @@ gulp.src('./dist/**')
 
 [MIT License](http://en.wikipedia.org/wiki/MIT_License)
 
-[npm-url]: https://npmjs.org/package/gulp-s3
-[npm-image]: https://badge.fury.io/js/gulp-s3.png
+[npm-url]: https://npmjs.org/package/gulp-s3-ls
+[npm-image]: https://badge.fury.io/js/gulp-s3-ls.png

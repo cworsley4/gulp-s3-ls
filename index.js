@@ -13,7 +13,7 @@ module.exports = function (aws, options) {
   if (!options.delay) { options.delay = 0; }
 
   var dry = (yargs.dry) ? true : false;
-  var regexGzip = /\.([a-z]{2,})\.gz$/i;
+  var regexGzip = /\.gz$/i;
   var regexGeneral = /\.([a-z]{2,})$/i;
 
   return es.mapSync(function (file) {

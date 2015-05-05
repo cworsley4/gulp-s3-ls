@@ -5,7 +5,8 @@ var knox = require('knox');
 var gutil = require('gulp-util');
 var mime = require('mime');
 var yargs = require('yargs').argv;
-mime.default_type = 'text/plain';
+
+mime.default_type = 'text/plain'; // jshint ignore:line
 
 module.exports = function (aws, options) {
   options = options || {};

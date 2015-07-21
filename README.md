@@ -44,7 +44,7 @@ gulp upload --dry
 
 #### options.headers
 
-Type: `Array`          
+Type: `Array`
 Default: `[]`
 
 Headers to set to each file uploaded to S3
@@ -53,7 +53,12 @@ Headers to set to each file uploaded to S3
 var gulp = require("gulp");
 var s3 = require("gulp-s3-ls");
 var aws = require("./aws.json");
-var options = { headers: {'Cache-Control': 'max-age=315360000, no-transform, public'} };
+var options = {
+  headers: {
+    'Cache-Control': 'max-age=315360000, no-transform, public',
+    'x-amz-acl': 'public-read'
+  }
+};
 
 gulp.src('./dist/**', {read: false})
     .pipe(s3(aws, options));
@@ -61,7 +66,7 @@ gulp.src('./dist/**', {read: false})
 
 #### options.gzippedOnly
 
-Type: `Boolean`          
+Type: `Boolean`
 Default: `false`
 
 Only upload files with .gz extension, additionally it will remove the .gz suffix on destination filename and set appropriate Content-Type and Content-Encoding headers.
